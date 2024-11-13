@@ -1,0 +1,135 @@
+body {
+   background: #f1f5f4;
+   margin: 0;
+}
+/* красит только фон */
+* {
+    box-sizing: border-box;
+}
+
+.menuV {
+	height: auto;
+    width: 500px;
+    margin-top: 25px;
+    margin-left: 30%;
+}
+
+.logo {
+    display: inline-block;
+    padding: 1px 2px; /* Отступы вокруг текста */
+    background-color: #f0f0f0; /* Цвет фона*/
+    border-radius: 5px; /* Закругленные углы*/
+    transition: background-color 0.3s ease; /*Эффект перехода */
+}
+
+.logo:hover {
+	background-color: yellow; /* Цвет фона при наведении курсора*/
+	color: red; 
+}
+.detal_button {
+    background-color:#f76301;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.detal_button:hover {
+	background-color: blue; /* Цвет фона при наведении курсора*/
+	color: orange; 
+}
+
+.big_button {
+    width: 800px;
+    background-color:#f76301;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.big_button:hover {
+	background-color: blue; /* Цвет фона при наведении курсора*/
+	color: orange;
+}
+
+.forA {		
+	padding-left: 5px;
+    border-right-width: 5px;
+    padding-right: 5px;
+	text-decoration: none;
+}
+		
+.details {
+    background-color:#4CAF50;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+}
+.st1 {
+    text-align: right;
+    width: 100%;
+}
+
+.head{
+	padding: 30px;
+	border: 1px solid #d6e9c6;
+	margin-top: 40px;
+	background-color: #006798;
+	display: flex; /* Используем flexbox для выравнивания */
+	width: 100%;
+	justify-content: space-between; /* Распределяем блоки равномерно*/
+	max-width: 100%;
+    height: auto;
+}
+
+.head1{
+	padding: 10px;
+	border: 1px solid #d6e9c6;
+	background-color: #006798;
+	display: flex; /* Используем flexbox для выравнивания */
+	width: 100%;
+	justify-content: space-between; /* Распределяем блоки равномерно*/
+	max-width: 100%;
+    height: auto;
+	padding-top: 130px;
+}
+
+.head2{
+	padding: 30px;
+	border: 1px solid #d6e9c6;
+	background-color: #006798;
+	display: flex; /* Используем flexbox для выравнивания */
+	width: 100%;
+	/*justify-content: space-between; /* Распределяем блоки равномерно*/
+	max-width: 100%;
+    height: auto;
+
+}
+
+.verh1 {
+	border: 1px solid #d6e9c6;
+	background-color: #006798;
+    padding: 20px;
+    position: fixed; /* Фиксируем див */
+    top: 0; /* Позиционируем див сверху */
+    left: 0; /* Позиционируем див слева */
+    width: 100%; /* Занимаем всю ширину экрана */
+    z-index: 100; /* Устанавливаем более высокий z-index, чтобы див всегда был сверху */
+	display: flex;
+	max-width: 100%;
+    height: auto;
+}
+
+#for_block1, #for_block2  {
+	display: block;
+	position:relative ;
+	top: 50px;
+	float:left;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} <title>О нас </title> {% endblock %}
+{% block content %}
+<style>
+    .content_a {
+        display: none;
+        }
+</style>
+<div class="container_about">
+
+	<div class="nav_a"> О нас </div>
+
+{% for i in "12345" %}
+    <div class="row" data-target="content{{ i }}" onclick="showContent('content{{ i }}')">
+        {% if i == "1" %}
+           {% include 'AboutItems.html' with menuAb=menuAb_OsS %}
+        {% elif i == "2" %}
+            {% include 'AboutItems.html' with menuAb=menuAb_Dok %}
+        {% elif i == "3" %}
+          {% include 'AboutItems.html' with menuAb=menuAb_Obr %}
+        {% elif i == "4" %}
+           {% include 'AboutItems.html' with menuAb=menuAb_POU %}
+        {% elif i == "5" %}
+            {% include 'AboutItems.html' with menuAb=menuAb_RPN %}
+        {% endif %}
+    </div>
+    <div class="content_a" id="content{{ i }}">
+        {% if i == "1" %}
+            {% include 'AboutItems1.html' with menuAb=menuAb_OsS %}
+        {% elif i == "2" %}
+             {% include 'AboutItems1.html' with menuAb=menuAb_Dok %}
+        {% elif i == "3" %}
+            {% include 'AboutItems1.html' with menuAb=menuAb_Obr %}
+        {% elif i == "4" %}
+             {% include 'AboutItems1.html' with menuAb=menuAb_POU %}
+        {% elif i == "5" %}
+              {% block content1 %} {% include 'Teacher_Person.html' with person=person %}  {% endblock %}
+        {% endif %}
+    </div>
+{% endfor %}
+
+</div>
+<script src="{% static 'js/show_1.js' %}"> </script>
+<script src="{% static 'js/about111.js' %}">  </script>
+
+{% endblock  %}

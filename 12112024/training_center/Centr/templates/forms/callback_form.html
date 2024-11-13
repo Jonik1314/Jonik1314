@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- включает русский -->
+    <title>Форма обратной связи</title>
+        <link rel="stylesheet" href="{% static 'css/callback.css' %}">
+</head>
+<body>
+
+
+    <form method="post">
+        {% csrf_token %}
+
+        <h3>Контактная информация</h3>
+        <div>
+            <label for="name">Имя:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="phone">Телефон:</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+
+        <h3>Сообщение</h3>
+        <div>
+            <label for="message">Ваше сообщение:</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <a  target="_blank" href="{% url 'prerpodg' %}">
+            <button class="big_button">Все курсы переподготовки</button>
+    </a>
+</div>
+
+<div class="container" >
+    <!-- маркетплейс Педагогика, менеджмент и т.д. -->
+    {% include 'MenuItems.html' with menu=menu_ppd %}
+
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <a target="_blank" href="{% url 'dopodgot' %}">
+        <button class="big_button">Все курсы доподготовки</button>
+    </a>
+</div>
+
+<div class="container" >
+     {% include 'MenuItems.html' with menu=menu_dpd %}
+
+</div>
+<script src="{% static 'js/trtri.js' %}"></script>
+
+{% endblock  %}
+
+

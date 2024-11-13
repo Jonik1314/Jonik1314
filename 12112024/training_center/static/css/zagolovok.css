@@ -1,0 +1,18 @@
+.nav_a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: 1s;
+  color: #5b5b5b;
+  text-decoration: none;
+}
+
+.nav_a:hover {
+  transition: 1s;
+  color: #f76301;
+}

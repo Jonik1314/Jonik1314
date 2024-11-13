@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% load static %}
+<ul>Список сотрудников</ul>
+<ul>
+    {% for item in person %}
+    <img style='width: 150px; height: auto; margin-left: 35px;' src="{{MEDIA_URL}} {{item.image.url}}"
+                                 alt='{{item.title}}'>
+
+            <ol>
+                <li><strong>Фамилия:</strong> {{item.last_name }}</li>
+                <li><strong>Имя:</strong>  {{item.first_name}}</li>
+                <li><strong>Отчество:</strong> {{item.middle_name}}</li>
+                <li><strong>Дата рождения:</strong> {{ item.date_of_birth|date:"Y-m-d" }}</li>
+                <li><strong>Должность:</strong> {{ item.position }}</li>
+                <li><strong>Образование:</strong> {{ item.education }}</li>
+                <li><strong>Уровень образования:</strong> {{ item.education_level }}</li>
+                <li><strong>Квалификация:</strong> {{ item.qualification }}</li>
+                <li><strong>Ученое звание:</strong> {{ item.academic_degree }}</li>
+                <li><strong>Ученая степень:</strong> {{ item.academic_title }}</li>
+                <li><strong>Стаж педагогической работы:</strong> {{ item.pedagogical_experience }}</li>
+                <li><strong>Стаж работы в организации:</strong> {{ item.work_experience }}</li>
+                <li><strong>Повышение квалификации:</strong> {{ item.professional_development }}</li>
+                <li><strong>Преподаваемые дисциплины:</strong> {{ item.taught_subjects }}</li>
+                <hr>
+            </ol>
+
+
+    {% endfor %}
+</ul>
+

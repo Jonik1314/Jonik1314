@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+{% for itm in program %}
+  {% for item in infa %}
+
+      <!--div>{{item.id}}***{{item.name}} /*/*/*/{{itm.id}}***{{itm.title}}</div-->
+      {% if item.name == itm.title %}
+        <div class='contain_er'>
+          <div class="car_d">
+            <div class="titl_e">{{itm.id}} /*/ {{ itm.title }}</div>
+            <div class="info">
+              <p>Старт ближайшей группы:</p>
+              <h3>{{item.data}}  </h3>
+              <p>Стоимость обучения:</p>
+              <h3>{{item.price}} руб. </h3>
+              <p>(с возможностью рассрочки платежа)</p>
+            </div>
+            <div class="button_s">
+              <a target="_blank" href="record_view">
+                <button class="butto_n yellow-button">Записаться</button></a>
+              <a target="_blank" href="payment">
+                <button class="butto_n blue-button">Оплатить</button></a>
+            </div>
+          </div>
+          <div id='car_d'>   </div>
+          <div class="car_d2">
+            <div class='topic'> О П И С А Н И Е </div>
+            <div id='tic' >
+              <h4><span style='color: #ffc107;font-size: 18px;'>Название программы:</span> {{itm.title}} </h4>
+              <h4><span style='color: #ffc107;font-size: 18px;'>Стоимость обучения:</span> {{item.price}} руб.(С возможностью рассрочки платежа) </h4>
+              <h4><span style='color: #ffc107;font-size: 18px;'> Вид образовательной программы:</span> профессиональная переподготовка  </h4>
+              <h4><span style='color: #ffc107;font-size: 18px;'> Формат обучения:</span> {{item.format_learning}}  </h4>
+              <h4><span style='color: #ffc107;font-size: 18px;'> Продолжительность курса:</span> {{item.duration}}  </h4>
+              <h4><span style='color: #ffc107;font-size: 18px;'> Объем программы:</span> {{item.program_volume}}   </h4>
+              <h4><span style='color: #ffc107;font-size: 18px;'>Требования:</span> {{item.requirements}}</h4>
+              <h4>Посмотреть <!--button  id="openPdf"--><a class='tr' href="{{ item.learning_plan.url }}" target="_blank">
+              <button>Учебный план</button>
+              </a><!--/button--> </h4>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endblock  %}

@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="nav_a"> Курсы переподготовки </div>
+<div class="container_after" >
+{% include 'MenuItems.html' with menu=menu_ppd %}
+
+</div>
+
+<script src="{% static 'js/trtri.js' %}"></script>
+
+{% endblock  %}
+

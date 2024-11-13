@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} <title>Контакт </title> {% endblock %}
+{% block content %}
+
+ <!-- Контейнер выравнивает по ширине и по центру -->
+<div class="container2">
+    <div class="nav_a"> Контакты </div>
+     <!-- content содержит содержимое формы -->
+    <div class="content_1">
+         <!-- Левая колонка: адрес, телефоны, email. Можете добавить свое -->
+        <div class="left-side">
+            <div class="address details">
+                <!-- Вместо классов: название шрифтовых иконок (fontawesome.com) -->
+                <i class="fas fa-map-marker-alt"></i>
+                <!-- topic - заголовок, text-one, text-two - текст -->
+                <div class="topig">Адрес</div>
+                <div class="text-one">г. Пермь</div>
+                <div class="text-two">пр-кт Всеполучится, 888 стр. 1</div>
+            </div>
+            <div class="phone details">
+                <i class="fas fa-phone-alt"></i>
+                <div class="topig">Телефон</div>
+                <div class="text-one">8-800-000-00-00</div>
+                <div class="text-two">8-900-000-00-00</div>
+            </div>
+            <div class="email details">
+                <i class="fas fa-envelope"></i>
+                <div class="topig">Email</div>
+                <div class="text-one">support@site.ru</div>
+                <div class="text-two">admin@site.ru</div>
+            </div>
+        </div>
+
+        <!-- Правая колонка: сама форма -->
+        <div class="right-side">
+            <!-- Заголовок для формы -->
+            <div class="topic-text">Отправьте нам сообщение</div>
+                <!-- Какой-то дополнительный текст -->
+                <p>
+                    Если у вас есть какие-то вопросы или предложения по сотрудничеству -
+                    заполните форму ниже
+                </p>
+            <!-- Форма обратной связи -->
+            <form action="#">
+                <!-- Каждый input для выравнивания вкладываем в блок input-box -->
+                <div class="input-box">
+                    <input type="text" placeholder="Ваше имя" />
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Введите email" />
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Введите телефон" />
+                </div>
+                <div class="input-box message-box">
+                    <textarea placeholder="Сообщение"></textarea>
+                </div>
+                <div class="button">
+                    <input type="button" value="Отправить" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение шрифтовых иконок, можно получить на fontawesome.com
+<script
+src="https://kit.fontawesome.com/fce9a50d02.js"
+crossorigin="anonymous"
+></script>-->
+
+
+
+{% endblock  %}
