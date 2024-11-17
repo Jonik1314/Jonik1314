@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+   {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- включает русский -->
+    <title>Форма записи</title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        </head>
+        <body>
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Отправить</button>
+            </form>
+        </body>
+        </html>

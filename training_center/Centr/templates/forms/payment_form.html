@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- включает русский -->
+    <title>Форма оплаты</title>
+        <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+</head>
+<body>
+   <form method="post">
+        {% csrf_token %}
+         <div>
+            <label for="amount">Сумма:</label>
+            <input type="number" name="amount" id="amount" required>
+        </div>
+        <h3>Карта</h3>
+        <div>
+            <label for="card_number">Номер карты:</label>
+            <input type="text" name="card_number" id="card_number" required>
+        <label for="expiry_month">        Месяц        /        Год: </label>
+        </div>
+        <div style="width: 350px; display: inline-flex;">
+
+            <input style="margin-right: 20px;" type="number" name="expiry_month" id="expiry_month" min="1" max="12" required>
+            /
+            <input style="margin-left: 20px;" type="number" name="expiry_year" id="expiry_year" min="2023" required>
+        </div>
+        <div>
+            <label for="cvc">CVC2/CVV2:</label>
+            <input type="tel" name="cvc" id="cvc" pattern="[0-9]{3,4}" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input  type="email" name="email" id="email" required>
+            <label for="email">По указанному адресу мы вышлем вам ваш чек об оплате.</label>
+            <p>  </p>
+        </div>
+
+
+        <button type="submit">Оплатить <span id="amount">0.00</span> руб.</button> <!-- Кнопка с суммой -->
+    </form>
+</body>
+</html>
