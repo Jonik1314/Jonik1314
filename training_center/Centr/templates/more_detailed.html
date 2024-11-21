@@ -8,16 +8,16 @@
     <h4>{{ detail.value_programs }} программ(а/ы)</h4>
 
 {% for item in program %}
-<div>{{item.id}}*{{item.title}}///***/// {{item.kurs}} ----{{item.get_type_display}}</div>
+
     {% if item.kurs == detail.title  %}
         {% if item.get_type_display == detail.get_type_display %}
             <div class="card_detail">
 
-                <h2>{{item.id}} // ** //{{ item.title }}</h2>
+                <h2>{{ item.title }}</h2>
                 <h4> {{ item.get_type_display }}</h4>  <!-- Вывод типа  item.id -->
                 <p>{{ item.description }}</p>
                 <p>Курс: {{ item.kurs }}</p>
-                    <a href="{% url 'info_program'  %}"> <button >Подробнее</button></a>
+                    <a href="{% url 'info_program' item.title   %}"> <button >Подробнее</button></a>
             </div>
         {% endif %}
     {% endif %}

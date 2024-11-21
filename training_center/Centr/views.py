@@ -36,19 +36,20 @@ def about(request):
     )
 
 
-def info_program(request):
+def info_program(request,title):
     program = more_detailed.objects.all()  # 'title': titleprogram=program
     # title = program.title
-    infa = card_info.objects.all()  # filter(program_id), program_id
+    infa = card_info.objects.all() # filter(program_id), program_id
 
-    context = {'infa': infa, 'program': program,}
-    return render(request, 'card_info.html', context=context)
+    context = {'infa': infa, 'program': program,'title':title}
+    return render(request, 'card_info.html', context=context,)
 
 
 def detailed(request, object_id):  # object_id принимает id из URL
     detail = get_object_or_404(MenuTrainingCent, pk=object_id)
     program = more_detailed.objects.order_by('type')
     infa = card_info.objects.all()
+
     context = {'infa': infa,'detail': detail, 'program': program}
     return render(request, 'more_detailed.html', context=context)
 

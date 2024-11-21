@@ -24,7 +24,7 @@ from Centr import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:object_id>', views.detailed, name='detailed'),
-    path('info_program', views.info_program, name='info_program'),  #  /<int:program_id>/
+    path('info_program/<str:title>', views.info_program, name='info_program'),  #  /<int:program_id>/
     path('admin/', admin.site.urls),
     path('/', admin.site.urls),
     path('about', views.about, name='about'),
@@ -32,6 +32,7 @@ urlpatterns = [
     path('record_view', views.record_view, name='record_view'),
     path('callback', views.callback_form, name='callback_form'),
     path('payment', views.payment_form, name='payment_form'),
+    path('info_program/payment_form/', views.payment_form, name='payment_form'),
     path('prerpodg', views.prerpodg_view, name='prerpodg'),
     path('dopodgot', views.dopodgot_view, name='dopodgot'),
 
